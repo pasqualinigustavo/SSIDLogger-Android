@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/topButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ToggleButton
+            android:id="@+id/logSwitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:checked="false"
+            android:onClick="onClickLog"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textOff="@string/not_logging"
+            android:textOn="@string/logging" />
+
+        <!--<Button-->
+            <!--android:id="@+id/btnScan"-->
+            <!--style="@style/defaultMarginLeft"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight=".5"-->
+            <!--android:onClick="onClickScan"-->
+            <!--android:text="@string/scan_now" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topButtons">
+
+        <ToggleButton
+            android:id="@+id/activeLogSwitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:checked="false"
+            android:onClick="onClickLogActive"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textOff="Com arquivo"
+            android:textOn="Sem arquivo" />
+
+        <!--<ToggleButton-->
+            <!--android:id="@+id/activeSwitch"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight=".5"-->
+            <!--android:checked="false"-->
+            <!--android:onClick="onClickActive"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textOff="@string/passive"-->
+            <!--android:textOn="@string/active" />-->
+
+        <!--<ToggleButton-->
+            <!--android:id="@+id/frequencySwitch"-->
+            <!--style="@style/defaultMarginLeft"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight=".5"-->
+            <!--android:checked="false"-->
+            <!--android:onClick="onClickFequency"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textOff="@string/oneMinutes"-->
+            <!--android:textOn="@string/thirtySeconds" />-->
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/textLogfile"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@+id/editFilename"-->
+        <!--android:layout_alignBottom="@+id/editFilename"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:text="@string/logfile"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editFilename"-->
+        <!--style="@style/defaultMarginTL"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_below="@+id/secondButtons"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_toRightOf="@+id/textLogfile"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/please_input_a_valid_file_name"-->
+        <!--android:imeOptions="actionDone"-->
+        <!--android:inputType="text"-->
+        <!--android:singleLine="true" />-->
+
+    <TextView
+        android:id="@+id/textSize"
+        style="@style/defaultMarginTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/secondButtons"
+        android:text="@string/size"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textLSize"
+        style="@style/defaultMinWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textSize"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/textSize"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textFree"
+        style="@style/defaultMarginTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textSize"
+        android:text="@string/freespace"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/textLFree"-->
+        <!--style="@style/defaultMarginLeft"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@+id/textFree"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_toRightOf="@+id/textFree"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editComment"-->
+        <!--style="@style/defaultMarginTop"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_below="@+id/textFree"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/write_comment_into_log_file_"-->
+        <!--android:imeOptions="actionSend"-->
+        <!--android:singleLine="true" />-->
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
+
+    defaultConfig {
+        applicationId "org.zordius.ssidlogger"
+        minSdkVersion 15
+        targetSdkVersion 27
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("wifi.jks")
+            storePassword "wifi1234"
+            keyAlias "wifi"
+            keyPassword "wifi1234"
+        }
+        debug {
+            storeFile file("wifi.jks")
+            storePassword "wifi1234"
+            keyAlias "wifi"
+            keyPassword "wifi1234"
+        }
+    }
+}
+
+dependencies {
+    final SUPPORT_LIBRARY_VERSION = '27.0.2'
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    //support Google
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-v13:$SUPPORT_LIBRARY_VERSION"
+}
